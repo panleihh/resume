@@ -7,57 +7,112 @@ export default class Home extends Component {
 
   state = {
     index: 1,
+    option: 1,
+    isAnimate: false,
+    direction: 'down',
+  }
+
+  handleName = (i) => {
+    const { index, option } = this.state;
+    return (index === i || index + option === i)
   }
 
   handleKeyPress = (e) => {
+    const { index } = this.state;
     const { keyCode } = e;
-    if (keyCode === 38) { // 方向上键
+    if (keyCode === 38 && index > 1) { // 方向上键
       console.log(e.keyCode, 'up');
-      this.setState((prevState) => ({ 
+      this.setState((prevState) => ({
+        option: prevState.index > 1 ? 1 : -1,
         index: prevState.index > 1 ? prevState.index - 1 : 1,
-       }))
-    } else if (keyCode === 40) { // 方向下键
+        direction: 'up',
+        isAnimate: true,
+      }))
+    } else if (keyCode === 40 && index + 1 <= 4) { // 方向下键
       console.log(e.keyCode, 'down');
-      this.setState((prevState) => ({ 
+      this.setState((prevState) => ({
+        option: prevState.index < 4 ? -1 : 1,
         index: prevState.index < 4 ? prevState.index + 1 : 4,
-       }))
+        direction: 'down',
+        isAnimate: true,
+      }))
     }
   }
 
+  handleAnimateEnd = (e) => {
+    console.log(e);
+    this.setState({ isAnimate: false });
+  }
+
   render() {
-    const { index } = this.state;
-    const { handleKeyPress } = this;
+    const { option, index, isAnimate, direction } = this.state;
+    const { handleName, handleKeyPress, handleAnimateEnd } = this;
+
+    console.log('index: ', index)
+    console.log('index + option: ', index + option);
 
     return (
-      <div onKeyDown={handleKeyPress} tabIndex="0">
-        <section className={classnames(styles.section, {
-          [styles.visible]: index === 1,
-        })}>
-          <div className={styles.content}>
+      <div className={styles.container} onKeyDown={handleKeyPress} tabIndex="0">
+        <section
+          className={classnames(styles.section, {
+            [styles.active]: index === 1,
+            [styles.visible]: handleName(1),
+          })}
+          onAnimationEnd={handleAnimateEnd}
+        >
+          <div
+            className={classnames(styles.content, {
+              [styles.animate0]: isAnimate && handleName(1) ,
+              [styles.animate1]: isAnimate && handleName(1),
+              [styles.animate2]: isAnimate && handleName(1),
+            })}
+          >
             1
           </div>
         </section>
-        
-        <section className={classnames(styles.section, {
-          [styles.visible]: index === 2,
-        })}>
-          <div className={styles.content}>
+
+        <section
+          className={classnames(styles.section, {
+            [styles.active]: index === 2,
+            [styles.visible]: handleName(2),
+          })}
+          onAnimationEnd={handleAnimateEnd}
+        >
+          <div
+            className={classnames(styles.content, {
+              [styles.animateUp]: isAnimate && handleName(2),
+            })}
+          >
             2
           </div>
         </section>
-        
-        <section className={classnames(styles.section, {
-          [styles.visible]: index === 3,
-        })}>
-          <div className={styles.content}>
+
+        <section
+          className={classnames(styles.section, {
+            [styles.active]: index === 3,
+            [styles.visible]: handleName(3),
+          })}
+        >
+          <div
+            className={classnames(styles.content, {
+              [styles.animateUp]: isAnimate && handleName(3),
+            })}
+          >
             3
           </div>
         </section>
-        
-        <section className={classnames(styles.section,{
-          [styles.visible]: index === 4,
-        })}>
-          <div className={styles.content}>
+
+        <section
+          className={classnames(styles.section, {
+            [styles.active]: index === 4,
+            [styles.visible]: handleName(4),
+          })}
+        >
+          <div
+            className={classnames(styles.content, {
+              [styles.animateUp]: isAnimate && handleName(4),
+            })}
+          >
             4
           </div>
         </section>
