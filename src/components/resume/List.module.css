@@ -1,0 +1,55 @@
+.list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.list::before {
+  position: absolute;
+  left: 3px;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  content: '';
+  background-color: #abd8ab;
+}
+
+.list::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  content: '';
+  background-color: #abd8ab;
+  border-radius: 50%;
+}
+
+.listItem {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+  padding: 0 0 0 16px;
+  list-style: none;
+}
+
+.listItem::before {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  content: '';
+  background-color: #fff;
+  border: 2px solid #abd8ab;
+  border-radius: 50%;
+}
+
+.content1 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.content2 {
+  margin: 0;
+}

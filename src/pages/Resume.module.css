@@ -1,0 +1,83 @@
+.container {
+  margin: 10px auto;
+  padding: 24px;
+  width: 980px;
+  min-height: 100vh;
+  box-shadow: 0px 0px 8px 3px #abd8ab;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #87ad87;
+}
+
+.header {
+  display: flex;
+  padding: 20px 0 0 0;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+}
+
+.avatarImg {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.introduce {
+  padding: 0 0 0 16px;
+  width: 100%;
+}
+
+.introSelf {
+  display: flex;
+  align-items: baseline;
+  align-content: space-between;
+  margin: 0;
+  padding: 0 0 8px 0;
+  border-bottom: 3px solid #abd8ab;
+}
+
+.introSelfName {
+  font-size: 36px;
+}
+
+.introSelfCareer {
+  margin-left: auto;
+}
+
+.introInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.introInfoList {
+  margin: 0;
+  padding: 0;
+}
+
+.introList1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.introInfoListItem {
+  padding: 0 20px 8px 0;
+  width: 200px;
+  list-style: none;
+}
+
+.content {
+  /*定义列数*/
+	column-count: 2;
+	/*列间距*/
+	column-gap: 40px;
+}
+
+.contentItem {
+  display: block;
+}
