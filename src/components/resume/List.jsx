@@ -28,7 +28,7 @@ export default class List extends PureComponent {
         {dataList.map((item, index) => (
           <li className={styles.listItem} key={index}>
             {item.date && (
-              <div className={styles.itemTime}>{item.date}</div>
+              <div className={styles.itemDate}>{item.date}</div>
             )}
 
             <div className={styles.itemContent}>

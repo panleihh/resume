@@ -9,16 +9,18 @@ export default class SectionWrap extends PureComponent {
     title: PropTypes.string,
     className: PropTypes.string,
     children: PropTypes.node,
+    style: PropTypes.shape({}),
   }
 
   static defaltProps = {
     title: '',
     className: '',
     children: {},
+    style: {},
   }
 
   render() {
-    const { title, className, children } = this.props;
+    const { title, className, children, style } = this.props;
 
     const preFix = classnames(
       className,
@@ -26,9 +28,9 @@ export default class SectionWrap extends PureComponent {
     )
 
     return (
-      <div className={preFix}>
+      <div className={preFix} style={style}>
         <div className={styles.title}>
-          <span>{title || 'Education'}</span>
+          <span className={styles.titleText}>{title || 'Education'}</span>
           <span className={styles.line1} />
         </div>
 

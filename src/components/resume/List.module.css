@@ -14,7 +14,7 @@
   background-color: #abd8ab;
 }
 
-.list::after {
+/* .list::after {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -23,7 +23,7 @@
   content: '';
   background-color: #abd8ab;
   border-radius: 50%;
-}
+} */
 
 .listItem {
   display: flex;
@@ -43,6 +43,14 @@
   background-color: #fff;
   border: 2px solid #abd8ab;
   border-radius: 50%;
+}
+
+.itemDate {
+  min-width: 150px;
+}
+
+.itemContent {
+  padding: 0 0 0 12px;
 }
 
 .content1 {

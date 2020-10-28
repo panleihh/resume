@@ -3,6 +3,8 @@
   padding: 24px;
   width: 980px;
   min-height: 100vh;
+  font-size: 20px;
+  line-height: 24px;
   box-shadow: 0px 0px 8px 3px #abd8ab;
   border-radius: 4px;
   box-sizing: border-box;
@@ -11,17 +13,17 @@
 
 .header {
   display: flex;
-  padding: 20px 0 0 0;
+  padding: 50px 0 30px 0;
 }
 
 .avatar {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
 }
 
 .avatarImg {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -41,11 +43,14 @@
 }
 
 .introSelfName {
-  font-size: 36px;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: bold;
 }
 
 .introSelfCareer {
   margin-left: auto;
+  font-size: 24px;
 }
 
 .introInfo {
@@ -66,18 +71,163 @@
 }
 
 .introInfoListItem {
-  padding: 0 20px 8px 0;
-  width: 200px;
+  padding: 0 26px 8px 0;
+  width: 210px;
+  white-space: nowrap;
   list-style: none;
 }
 
+/* .content { */
+
+/*定义列数*/
+
+/* column-count: 2; */
+
+/*列间距*/
+
+/* column-gap: 40px; */
+
+/* } */
+
+/* .contentItem {
+  display: block;
+}
+
+.projectList {
+  margin: 0;
+  padding: 0;
+} */
+
 .content {
-  /*定义列数*/
-	column-count: 2;
-	/*列间距*/
-	column-gap: 40px;
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  padding: 0 20px 0 0;
+}
+
+
+.right {
+  flex: 1;
+  padding: 0 0 0 20px;
 }
 
 .contentItem {
-  display: block;
+  padding: 0 0 20px 0;
+}
+
+.timeList {
+  margin: 0;
+  padding: 0;
+}
+
+.timeListItem {
+  position: relative;
+  padding: 0 0 0 28px;
+  list-style: none;
+}
+
+.timeListItem::before {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 10px;
+  width: 3px;
+  content: '';
+  background-color: #abd8ab;
+}
+
+.timeItemDate {
+  position: relative;
+  padding: 4px 0 0 0;
+  color: #999;
+}
+
+.timeItemDate::before {
+  position: absolute;
+  top: 8px;
+  left: -24px;
+  width: 9px;
+  height: 9px;
+  border: 3px solid #abd8ab;
+  border-radius: 50%;
+  background-color: #fff;
+  content: '';
+}
+
+.workList {
+  margin: 0;
+  padding: 16px 0 0 0;
+}
+.workItem {
+  padding: 0 0 12px 0;
+}
+.workContent2 {
+  padding: 8px 0 0 16px;
+  font-size: 14px;
+}
+
+.skillList {
+  margin: 0;
+  padding: 8px 8px 0 0;
+  background: rgba(135, 173, 135, .05);
+}
+
+.skillItem {
+  display: flex;
+  padding: 0 0 6px 0;
+}
+
+.skillItemIcon {
+  padding: 0 8px 0 0;
+}
+
+.ballList {
+  position: relative;
+  margin: 20px 0;
+  height: 200px;
+}
+.ballItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+}
+.ball1 {
+  top: 20px;
+  left: 60px;
+  width: 100px;
+  height: 100px;
+  background-color: #abd8ab;
+}
+.ball2 {
+  top: 95px;
+  left: 125px;
+  width: 70px;
+  height: 70px;
+  background-color: #abd8ab;
+}
+.ball3 {
+  top: 70px;
+  left: 190px;
+  width: 90px;
+  height: 90px;
+  background-color: #abd8ab;
+}
+.ball4 {
+  top: 40px;
+  left: 260px;
+  width: 120px;
+  height: 120px;
+  background-color: #abd8ab;
+}
+.ball5 {
+  top: 90px;
+  left: 330px;
+  width: 60px;
+  height: 60px;
+  background-color: #abd8ab;
 }
